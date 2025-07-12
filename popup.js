@@ -45,7 +45,6 @@ function addBlockedUrl() {
   const url = urlInput.value.trim();
   const description = descriptionInput.value.trim() || '此网站有恶魔😈';
   if (!url) {
-    alert('请输入网站地址');
     return;
   }
   chrome.storage.local.get('blockedUrls', function(result) {
@@ -55,7 +54,6 @@ function addBlockedUrl() {
       urlInput.value = '';
       descriptionInput.value = '';
       loadBlockedUrls();
-      alert('添加成功！');
     });
   });
 }
@@ -93,7 +91,6 @@ function clearAllData() {
   if (confirm('确定要清除所有保存的数据吗？此操作不可恢复！')) {
     chrome.storage.local.clear(function() {
       loadBlockedUrls();
-      alert('所有数据已清除！');
     });
   }
 }
@@ -113,9 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('urlList').addEventListener('click', (e) => {
     if (e.target.classList.contains('btn-delete')) {
       const idx = e.target.getAttribute('data-id');
-      if (confirm('确定要删除这个阻止网站吗？')) {
-        deleteBlockedUrl(idx);
-      }
+      deleteBlockedUrl(idx);
     }
   });
   
