@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自律助手</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>自律助手</h1>
+    
+    <!-- 添加新URL表单 -->
+    <div class="add-form">
+      <h2>添加阻止网站</h2>
+      <div class="form-group">
+        <label for="urlInput">网站地址:</label>
+        <input type="text" id="urlInput" placeholder="例如: www.baidu.com">
+        <button id="copyCurrentBtn" class="btn-secondary">复制当前网址</button>
+      </div>
+      <div class="form-group">
+        <label for="descriptionInput">描述:</label>
+        <textarea id="descriptionInput" placeholder="为什么阻止这个网站? (留空默认为: 此网站有恶魔😈)"></textarea>
+      </div>
+      <button id="addBtn" class="btn-primary">添加</button>
+    </div>
+    
+    <!-- 阻止网站列表 -->
+    <div class="url-list">
+      <h2>已阻止的网站</h2>
+      <div id="urlList" class="url-items">
+        <!-- 动态加载的URL列表 -->
+      </div>
+      <button id="clearDataBtn" class="btn-danger">清除所有数据</button>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 
